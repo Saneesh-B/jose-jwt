@@ -34,6 +34,8 @@ namespace Jose
                 {
                     aes.Key = aesKey;
                     aes.IV = iv;
+                    aes.Mode = CipherMode.CBC;
+                    aes.Padding = PaddingMode.PKCS7;
 
                     using (MemoryStream ms = new MemoryStream())
                     {
@@ -80,7 +82,9 @@ namespace Jose
                 using (Aes aes = Aes.Create())
                 {
                     aes.Key = aesKey;
-                    aes.IV = iv;                
+                    aes.IV = iv;
+                    aes.Mode = CipherMode.CBC;
+                    aes.Padding = PaddingMode.PKCS7;
 
                     using (MemoryStream ms = new MemoryStream())
                     {
